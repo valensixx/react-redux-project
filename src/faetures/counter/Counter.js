@@ -10,9 +10,9 @@ const Counter = () => {
 
     const addValue = Number(incrementAmount) || 0;
 
-    const resetAll () => {
+    const resetAll = () => {
         setIncrementAmount(0);
-        dispatch(0);
+        dispatch(reset());
     }
 
     return (
@@ -30,7 +30,8 @@ const Counter = () => {
             />
 
             <div>
-                <button onClick={() => dispatch(incrementByAmount(addValue))}> Add  Amount</button>
+                <button onClick={() => dispatch(incrementByAmount(addValue))}> Add Amount</button>
+                <button onClick={resetAll}> Reset</button>
             </div>
         </section>
     )
